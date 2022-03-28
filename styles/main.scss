@@ -2,5 +2,77 @@
 @import './base/reset';
 @import './base/colors';
 
-@import './mixin/flexbox.scss'
+@import './mixin/flexbox.scss';
 
+
+// header
+
+header {
+  background-image: url(../image/f9fa54a5d6e70dce563e9f949271e52e_t.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  
+  .header-nav {
+    @include flexbox(between);
+    margin-top: 16px;
+    
+    .header-title {
+      font-weight : 700;
+    }
+
+    ul {
+      @include flexbox;
+      margin-bottom: 0;
+
+      li {
+        font-size: 24px;
+      
+        &:first-child {
+          margin-right: 16px;
+        }
+      }
+    }
+  }
+  
+  .header-section {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    .text_box{
+      font-size: 2rem;
+      text-align: center;
+      
+      .text {
+        animation: colors 20s infinite;
+      }
+
+      @keyframes colors {
+        0% {
+          color: #F9ED69;
+        }
+        33% {
+          color: #F08A5D;
+        }
+        66% {
+          color: #B83B5E;
+        }
+        100% {
+          color: #6A2C70;
+        }
+      }
+
+      .blink {
+        animation: blink 0.5s infinite;
+        font-size: 2.5rem;
+      }
+      
+      @keyframes blink {
+        to {
+          opacity: 0;
+        }
+      }
+    }
+  }
+}
