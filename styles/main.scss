@@ -15,27 +15,35 @@ header {
   background-size: cover;
   height: 100vh;
   
-  .header-nav {
-    @include flexbox(between);
-    margin-top: 16px;
+  // .header-nav {
+  //   @include flexbox(between);
+  //   margin-top: 16px;
     
-    .header-title {
-      font-weight : 700;
-    }
+  //   .header-title {
+  //     font-weight : 700;
+  //   }
 
-    ul {
-      @include flexbox;
-      margin-bottom: 0;
+  //   ul {
+  //     @include flexbox;
+  //     margin-bottom: 0;
 
-      li {
-        font-size: 24px;
+  //     li {
+  //       font-size: 24px;
+
+  //       .git {
+  //         color: $dark-3;
+  //       }
+
+  //       .mail {
+  //         color: $dark-3;
+  //       }
       
-        &:first-child {
-          margin-right: 16px;
-        }
-      }
-    }
-  }
+  //       &:first-child {
+  //         margin-right: 16px;
+  //       }
+  //     }
+  //   }
+  // }
   
   .header-section {
     position: absolute;
@@ -77,6 +85,46 @@ header {
       }
     }
   }
+
+  .arrow {
+    button span {
+      position: absolute;
+      top: 70%;
+      left: 50%;
+      width: 24px;
+      height: 24px;
+      border-left: 1px solid #fff;
+      border-bottom: 1px solid #fff;
+      transform: translateX(-50%) rotate(-45deg);
+      animation: arrow-ani 2s infinite;
+
+      &:nth-of-type(1) {
+        animation-delay: 0s;
+      }
+      &:nth-of-type(2) {
+        margin-top: 16px;
+        animation-delay: 0.15s;
+      }
+      &:nth-of-type(3) {
+        margin-top: 32px;
+        animation-delay: 0.3s;
+      }
+
+      @keyframes arrow-ani {
+        0% {
+          opacity: 0;
+        }
+        50% {
+          opacity: 1;
+          border-color: $dark-1;
+        }
+        100% {
+          opacity: 0;
+          border-color: #fff;
+        }
+      }
+    }
+  }
 }
 
 
@@ -84,7 +132,7 @@ header {
 
 .main-menu {
   .main-menu-fixed {
-    position: absolute;
+    position: fixed;
     top: 50%;
     right: 10px;
     transform: translateY(-50%);
@@ -100,20 +148,12 @@ header {
       color: rgb(212, 10, 10);
     }
   
-    .light-toggle {
-      display: none;
-    }
-  
     .dark-mode {
       color: rgb(248, 248, 27);
     }
 
-    .dark-hidden {
+    .light-hidden {
       display: none;
-    }
-  
-    .dark-toggle {
-      display: block;
     }
   
     .skill {
@@ -124,4 +164,21 @@ header {
       color: $dark-1;
     }
   }
+}
+
+// section-skill
+
+.html {
+  color: rgb(255, 94, 0);
+  font-size: 2rem;
+}
+
+.css {
+  color: rgb(16, 112, 190);
+  font-size: 2rem;
+}
+
+.js {
+  color: rgb(248, 248, 25);
+  font-size: 2rem;
 }
