@@ -15,35 +15,6 @@ header {
   background-size: cover;
   height: 100vh;
   
-  // .header-nav {
-  //   @include flexbox(between);
-  //   margin-top: 16px;
-    
-  //   .header-title {
-  //     font-weight : 700;
-  //   }
-
-  //   ul {
-  //     @include flexbox;
-  //     margin-bottom: 0;
-
-  //     li {
-  //       font-size: 24px;
-
-  //       .git {
-  //         color: $dark-3;
-  //       }
-
-  //       .mail {
-  //         color: $dark-3;
-  //       }
-      
-  //       &:first-child {
-  //         margin-right: 16px;
-  //       }
-  //     }
-  //   }
-  // }
   
   .header-section {
     position: absolute;
@@ -162,6 +133,59 @@ header {
   
     .project {
       color: $dark-1;
+    }
+  }
+}
+
+// section-about
+
+@mixin border-b {
+  border-bottom: 1px solid $dark-3;
+  width: 80%;
+  height: 100%;
+}
+
+.aboutme {
+  height: 100vh;
+  .clear-fix {
+    &::after {
+      content: '';
+      display: block;
+      clear: both;
+    }
+    .profile {
+      @include border-b;
+      float: left;
+      .aboutme-title {
+        color: $dark-2;
+        font-style: oblique;
+        font-weight: 700;
+       }
+  
+       .profile-img {
+         margin: 1rem 0;
+         width: 150px;
+         height: 200px;
+       }
+     
+       .profile-info {
+         font-size: 12px;
+       }
+    }
+  
+    .profile-p {
+      @include border-b;
+      float: right;
+
+      .profile-p-title {
+        display: inline-block;
+        font-weight: 700;
+        margin: 1rem 0;
+      }
+    }
+    .test {
+      @include border-b;
+      float: left;
     }
   }
 }
