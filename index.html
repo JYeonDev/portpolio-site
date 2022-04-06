@@ -12,7 +12,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./style.css">
   <script src="https://kit.fontawesome.com/6f79c7e46e.js" crossorigin="anonymous"></script>
-  <title>Document</title>
+  <script data-cfasync="false" type="text/javascript" src="./email/form-submission-handler.js"></script>
+  <title>Portpolio</title>
 </head>
 
 <body>
@@ -195,6 +196,42 @@
         </div>
       </div>
   </section>
+
+  <section class="contact">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <h1>CONTACT</h1>
+        </div>
+
+        <div class="col-12">
+          <form class="gform"
+            action="https://script.google.com/macros/s/AKfycbxQ0nCcHGLOuQNEf2KxxVMSpZSbuN5nUwznI5eC0Q/exec"
+            method="POST" data-email="whddus4837@gamil.com">
+            <fieldset>
+              <div class="box-input">
+                <label for="userName">Name plz:)</label>
+                <input type="text" id="userName" name="name" placeholder="이!름!" required>
+              </div>
+              <div class="box-input">
+                <label for="userEmail">Email Address</label>
+                <input type="email" id="userEmail" name="email" placeholder="이!메!일!" required>
+              </div>
+              <div class="box-input">
+                <label for="userMessage">Message</label>
+                <textarea name="message" id="userMessage" required></textarea>
+              </div>
+              <div class="box-input">
+                <button type="submit" class="btn-send">Send Message</button>
+              </div>
+            </fieldset>
+          </form>
+          <!-- <iframe name="iframe" style="display: none;"></iframe> -->
+        </div>
+      </div>
+    </div>
+  </section>
+
 
 
   <script src="./app.js"></script>
