@@ -1,6 +1,7 @@
 @import './base/nomalize';
 @import './base/reset';
 @import './base/colors';
+@import './base/fonts';
 
 @import './mixin/flexbox.scss';
 
@@ -10,9 +11,10 @@
 // header
 
 header {
-  background-image: url(../image/f9fa54a5d6e70dce563e9f949271e52e_t.jpeg);
-  background-repeat: no-repeat;
-  background-size: cover;
+  // background-image: url(../image/f9fa54a5d6e70dce563e9f949271e52e_t.jpeg);
+  // background-repeat: no-repeat;
+  // background-size: cover;
+  background-color: $maincolor-1;
   height: 100vh;
   
   
@@ -26,23 +28,24 @@ header {
       text-align: center;
       
       .text {
-        animation: colors 20s infinite;
+        // animation: colors 20s infinite;
+        color: $maincolor-2;
       }
 
-      @keyframes colors {
-        0% {
-          color: #F9ED69;
-        }
-        33% {
-          color: #F08A5D;
-        }
-        66% {
-          color: #B83B5E;
-        }
-        100% {
-          color: #6A2C70;
-        }
-      }
+      // @keyframes colors {
+      //   0% {
+      //     color: #F9ED69;
+      //   }
+      //   33% {
+      //     color: #F08A5D;
+      //   }
+      //   66% {
+      //     color: #B83B5E;
+      //   }
+      //   100% {
+      //     color: #6A2C70;
+      //   }
+      // }
 
       .blink {
         animation: blink 0.5s infinite;
@@ -64,8 +67,8 @@ header {
       left: 50%;
       width: 24px;
       height: 24px;
-      border-left: 1px solid #fff;
-      border-bottom: 1px solid #fff;
+      border-left: 1px solid $maincolor-2;
+      border-bottom: 1px solid $maincolor-2;
       transform: translateX(-50%) rotate(-45deg);
       animation: arrow-ani 2s infinite;
 
@@ -91,7 +94,7 @@ header {
         }
         100% {
           opacity: 0;
-          border-color: #fff;
+          border-color: $maincolor-2;
         }
       }
     }
@@ -101,42 +104,42 @@ header {
 
 // nav-main-menu
 
-.main-menu {
-  .main-menu-fixed {
-    position: fixed;
-    top: 50%;
-    right: 10px;
-    transform: translateY(-50%);
-    z-index: 1;
-    li {
-      margin-bottom: 2rem;
-    }
+// .main-menu {
+//   .main-menu-fixed {
+//     position: fixed;
+//     top: 50%;
+//     right: 10px;
+//     transform: translateY(-50%);
+//     z-index: 1;
+//     li {
+//       margin-bottom: 2rem;
+//     }
 
-    i {
-      font-size: 1.5rem;
-    }
+//     i {
+//       font-size: 1.5rem;
+//     }
   
-    .light-mode {
-      color: rgb(212, 10, 10);
-    }
+//     .light-mode {
+//       color: rgb(212, 10, 10);
+//     }
   
-    .dark-mode {
-      color: rgb(248, 248, 27);
-    }
+//     .dark-mode {
+//       color: rgb(248, 248, 27);
+//     }
 
-    .light-hidden {
-      display: none;
-    }
+//     .light-hidden {
+//       display: none;
+//     }
   
-    .skill {
-      color: rgb(105, 52, 52);
-    }
+//     .skill {
+//       color: rgb(105, 52, 52);
+//     }
   
-    .project {
-      color: $main-font;
-    }
-  }
-}
+//     .project {
+//       color: $main-font;
+//     }
+//   }
+// }
 
 // section-about
 
@@ -148,6 +151,8 @@ header {
 
 .aboutme {
   height: 100vh;
+  background-color: $maincolor-2;
+  color: $maincolor-1;
   .clear-fix {
     &::after {
       content: '';
@@ -158,9 +163,7 @@ header {
       @include border-b;
       float: left;
       .aboutme-title {
-        color: $main-font;
-        font-style: oblique;
-        font-weight: 700;
+        @include title-font;
        }
   
        .profile-img {
@@ -200,14 +203,14 @@ header {
 
 .skill {
   height: 100vh;
-
+  background-color: $maincolor-1;
+  color: $maincolor-2;
   h1 {
-    font-style: oblique;
-    font-weight: 700;
+    @include title-font;
   }
   .accordion {
-    background-color: $primary;
-    color: $main-font;
+    background-color: $maincolor-2;
+    color: $maincolor-1;
     cursor: pointer;
     padding: 2px;
     width: 100%;
@@ -216,24 +219,25 @@ header {
     outline: none;
     transition: 0.4s;
     max-width: 500px;
-  }
+    margin-top: 5px;
 
-  .accordion:after {
-    content: '\02795';
-    font-size: 13px;
-    color: $main-font;
-    float: right;
-    margin-right: 10px;
-    margin-top: 10px;
+    &:after {
+      content: '\02795';
+      font-size: 13px;
+      color: $maincolor-1;
+      float: right;
+      margin-right: 10px;
+      margin-top: 10px;
+    }
   }
 
   .active {
-    border-left: 6px solid $primary-l;
+    border-left: 6px solid #adabab;
   }
 
   .active, .accordion:hover {
-    background-color: $primary-d;
-    color: $strong-font;
+    background-color: rgb(226, 222, 222);
+    color: $main-font;
   }
 
   .active:after {
@@ -242,14 +246,14 @@ header {
 
   .panel {
     padding: 0 18px;
-    background-color: $primary;
+    background-color: #f8f7f6;
     max-width: 500px;
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.2s ease-out;
 
     p {
-      color: $strong-font;
+      color: $main-font;
       line-height: 1.5;
     }
   }
@@ -284,14 +288,24 @@ header {
 
 .project {
   height: 100vh;
+  background-color: $maincolor-2;
+  color: $maincolor-1;
   h1 {
-    font-weight: 700;
-    font-style: oblique;
+    @include title-font;
   }
 
   .project-box {
     margin-bottom: 2rem;
-    border: 2px solid none;
-    background-color: $primary;
+    border: 2px solid $maincolor-1;
+  }
+}
+
+.contact {
+  height: 100vh;
+  background-color: $maincolor-1;
+  color: $maincolor-2;
+
+  h1 {
+    @include title-font;
   }
 }
