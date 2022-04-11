@@ -11,8 +11,60 @@
 // header
 
 header {
+  // max-width: 80%;
   background-color: $maincolor-1;
   height: 100vh;
+  // margin-top: 4.5rem;
+
+
+  .menu-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 5;
+    background-color: cadetblue;
+    padding: 1rem 0;
+    height: 4rem;
+    transition: all 1s ease-in-out;
+    
+    
+    // vertical-align: center;
+    // opacity: .4;
+
+    h1 {
+      display: inline-block;
+      font-family: $ko-sans;
+      color: $maincolor-2;
+      letter-spacing: .5rem;
+    }
+
+    .hamburger {
+      float: right;
+      margin-top: 8px;
+      transform: rotate(180deg);
+      cursor: pointer;
+      .line {
+        margin-bottom: 4px;
+        width: 30px;
+        height: 3px;
+        background-color: $maincolor-2;
+        transition: width 1s ease-in-out;
+      }
+    }
+  }
+
+  .menu-bar-animation {
+    height: 100%;
+
+    &:hover .line:first-child {
+      width: 10px;
+    }
+
+    &:hover .line:last-child {
+      width: 20px;
+    }
+  }
   
   
   .header-section {
@@ -82,53 +134,6 @@ header {
   }
 }
 
-
-// nav
-
-.navbar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-
-  .navbar-brand {
-    font-family: $ko-sans;
-  }
-}
-
-// nav {
-//   position: fixed;
-//   top: 12px;
-//   right: 15px;
-//   width: 40px;
-//   height: 40px;
-//   z-index: 2;
-//   border: 5px solid $main-font;
-//   border-radius: 100%;
-//   .menu-bar {
-//     .menu-title {
-//     }
-//     .hambuger {
-//       span {
-//         position: fixed;
-//         top: 24px;
-//         right: 25px;
-//         z-index: 2;
-//         width: 20px;
-//         height: 4px;
-//         background-color: $main-font;
-  
-//         &:nth-child(2) {
-//           top: 30px;
-//         }
-  
-//         &:last-child {
-//           top: 36px;
-//         }
-//       }
-//     }
-//   }
-// }
 
 // section-about
 
