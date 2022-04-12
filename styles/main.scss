@@ -23,7 +23,7 @@ header {
     left: 0;
     right: 0;
     z-index: 5;
-    background-color: cadetblue;
+    // background-color: cadetblue;
     padding: 1rem 0;
     height: 4rem;
     transition: all 1s ease-in-out;
@@ -52,6 +52,26 @@ header {
         transition: width 1s ease-in-out;
       }
     }
+
+    .menu-anchor {
+      height: 0;
+      overflow: hidden;
+      text-align: center;
+      font-size: 2rem;
+      font-family: $alfa;
+      font-weight: 700;
+      transition: all 1s ease-in-out;
+
+      li {
+        padding: 1rem 0;
+        margin: 30px 0;;
+        background-color: blue;
+        a {
+          text-decoration: none;
+          color: $maincolor-2;
+        }
+      }
+    }
   }
 
   .menu-bar-animation {
@@ -63,6 +83,10 @@ header {
 
     &:hover .line:last-child {
       width: 20px;
+    }
+
+    .menu-anchor {
+      height: 100%;
     }
   }
   

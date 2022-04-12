@@ -1,6 +1,6 @@
 // typingwrite
 
-const content = "반갑습니다, \n 성장하고 발전하며 \n 웹개발자를 목표로 하는 \n 김종연입니다.";
+const content = "반갑습니다, \n 성장하고 발전하며 \n 프론트엔드를 목표로 하는 \n 김종연입니다.";
 const text = document.querySelector(".text");
 let i = 0;
 
@@ -14,21 +14,44 @@ function typing(){
 }
 setInterval(typing, 200);
 
-// main-menu
+// menu-bar
 
-const light = document.querySelector('.light-mode');
-const dark = document.querySelector('.dark-mode');
+const menuBar = document.querySelector('.menu-bar');
 
-light.addEventListener('click', () => {
-  document.querySelectorAll('.main-menu-fixed li')[0].style.display = 'none'; 
-  document.querySelectorAll('.main-menu-fixed li')[1].style.display = 'block';
-  document.body.style.backgroundColor = 'black';
-  document.body.style.color = 'white';
+menuBar.addEventListener('click', ()=> {
+  menuBar.classList.toggle('menu-bar-animation');
+  console.log('test')
 })
 
-dark.addEventListener('click', () => {
-  document.querySelectorAll('.main-menu-fixed li')[0].style.display = 'block'; 
-  document.querySelectorAll('.main-menu-fixed li')[1].style.display = 'none';
-  document.body.style.backgroundColor = 'white';
-  document.body.style.color = 'black';
-})
+
+// skill
+
+const acc = document.getElementsByClassName("accordion");
+let count;
+
+for (count = 0; count < acc.length; count++) {
+  acc[count].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.maxHeight) {
+      panel.style.maxHeight = null;
+    } else {
+      panel.style.maxHeight = panel.scrollHeight + "px";
+    }
+  });
+}
+
+
+
+// AOS 스크롤 이벤트라이브러리
+AOS.init(
+  {
+    offset: 120,
+    delay: 0,
+    duration: 400, 
+    easing: 'ease', 
+    once: false, 
+    mirror: false, 
+    anchorPlacement: 'top-bottom' 
+    }
+  );
