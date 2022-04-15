@@ -41,6 +41,16 @@ for (count = 0; count < acc.length; count++) {
   });
 }
 
+// project
+
+// window.addEventListener('scroll', () => {
+//   let scrollHeight = this.scrollY;
+//   let projectHeight = document.querySelector('.project').offsetTop;
+//   console.log('스크롤높이',scrollHeight);
+//   console.log('프로젝트현재위치', projectHeight)
+
+// })
+
 
 
 // AOS 스크롤 이벤트라이브러리
