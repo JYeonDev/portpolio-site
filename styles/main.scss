@@ -304,19 +304,44 @@ header {
 // section-project
 
 .project {
-  // height: 3000px;
   padding-bottom: 2rem;
   background-color: $maincolor-2;
   color: $maincolor-1;
-  // overflow: hidden;
+
 
   h1 {
     @include title-font;
   }
 
   .project-box {
+    // display: flex;
     margin-bottom: 2rem;
     border: 2px solid $maincolor-1;
+
+    .portfolio-list {
+      // margin: 0 auto;
+      text-align: center;
+
+      img {
+        width: 200px;
+        height: 200px;
+      }
+    }
+
+    .project-text {
+      margin-left: 20px;
+
+      button {
+        background-color: $maincolor-1;
+        border-radius: 6px;
+        padding: 8px 16px;
+
+        a {
+          text-decoration: none;
+          color: $maincolor-2;
+        }
+      }
+    }
   }
 }
 
