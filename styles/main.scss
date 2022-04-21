@@ -439,10 +439,26 @@ footer {
           margin-top: 1rem; 
 
           li {
+            position: relative;
+            top: 0;
+            left: 0;
             background: none;
 
-            &:hover {
-              border-bottom: 1px solid black;
+            &:hover:after {
+              width: 100%;
+            }
+
+            &::after {
+              content: '';
+              position: absolute;
+              bottom: 20px;
+              left: 0;
+              width: 0;
+              height: 10px;
+              background: skyblue;
+              // opacity: .6;
+              z-index: -5;
+              transition: all .3s ease-in-out;
             }
           }
         }
